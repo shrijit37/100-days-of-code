@@ -1,57 +1,35 @@
-#include<iostream>
-#include<vector>
-#include<unordered_map>
-#include<string>
+// A line formed by a child from n stones of two colors, blue and green. The stones were picked up by the child randomly and he formed a line from those initially. As the child loves green color the most, he started moving the green stone forward to blue stones. Each stone move forward per second.
+
+// Assume that the stones arranged in 1 to n sequentially, position 1 treated as prior. If at some time X a blue stone is on i-th position and a green stone is on the (i+1)-th position, then at X+1 time green stone will have i-th position and blue stone will have (i+1)-th position. X is in seconds.
+
+// You have given the initial sequence of stones. Predict the sequence after t seconds.
+
+// Input Format
+// The first line contains two integers n and t (1 ≤ n, t ≤ 50), number of stones and time after which you have predict the sequence.
+// The next line contains the string s, which represents the initial sequence. ‘B’ as blue stone and ‘G’ as green stone.
+// Output Format
+// A single string that denotes the sequence after t seconds.
+
+// Constraints
+// 1 ≤ n, t ≤ 50
+// Sample Input 1 
+// 5 1
+// BGGBG
+// Sample Output 1 
+// GBGGB
+// Sample Input 2 
+// 5 2
+// BGGBG
+// Sample Output 2 
+// GGBGB
+// Sample Input 3 
+// 4 1
+// GGGB
+// Sample Output 3 
+// GGGB
+
+
+#include<bits/stdc++.h>
 using namespace std;
 
-
-int main()
-{
-
-vector <int> v = {1,2,3,4,5,6};
-//how to declare iterator
-
-
-vector<int> :: iterator it = v.begin();
- 
- for (it=v.begin();it!=v.end();++it)
- {
-  cout<<*it<<endl;
- }
-
-
- //to run code : g++ -std=c++11 <filename>
- //then //  "./<filename>"
-
-
- //iterator are mainly used in case on non-contagious data structure  ex->tree,set,map
-
-
-
- //in case of map
-
-
-// types of iterator 
-
-// 1. const_iterator->this is a read only iterator means that it can only be used to read the value can cannot alter it 
-// 2. iterator -> this can be used to read as well as alter the value 
-
- unordered_map<int , string> m;
-
- m[4]="srivastav";
- m[1]="shrijit";
-
-
- for(unordered_map<int ,string>::iterator it = m.begin();it !=m.end();it++)
- {
-    cout<<it->first<<" "<< it->second<<endl;
- }
-
-//or inshort 
-
-for(auto [key,value] : m)
-{
-    cout<<key<<" "<<value<<endl;
-}
-
-}
+int main

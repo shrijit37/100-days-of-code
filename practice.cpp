@@ -1,56 +1,44 @@
-#include<iostream>
-#include<math.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-bool is_prime(int n)
-{   
-    for(int i=2;i<=sqrt(n);i++)
-    {
-        
-        if(n%i==0)
-        {
-            return false;
-        }
-
-    }
-    return true;
-}
-
 int main()
-{
-    int x,y;
+{   
+    int n;
+    cin>>n;
+
+    int p;
+    cin>>p;
+
     int t;
-    scanf("%d",&t);
-    int step;
+    vector<int> v;
+    vector <int> ans;
+    for(int i=0;i<n;i++)
+    {   
+        cin>>t;
 
-    while(t--)
+        v.push_back(t); 
 
+    }
+    int max;
+    int i=0; int k=p;
+    while(k<=v.size())
     {
 
-        scanf("%d %d",&x,&y);
-        step =0;
-     while(x!=(y))
+        max=0;
+        for(int l=i;l<k;l++)
         {
-            if(is_prime(x+2)&&(x+2)<=y)
-            {
-                step++;
-                x=x+2;
-               
-            }
-            else if((x+2)<=y)
-            {
-                step++;
-                x++;
-              
-            }
-            else 
-            {
-                step++;
-                break;
-            }
+           if(v[l]>max)
+           {
+               max=v[l];
+           }
         }
-
-        printf("%d\n",step);
+        ans.push_back(max);
+        i++;
+        k++;
     }
- 
+
+    for(int i=0;i<ans.size();i++)
+    {
+        cout<<ans[i]<<endl;
+    }
 }
